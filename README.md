@@ -6,7 +6,7 @@ sudo chmod +x /etc/init.d/minidlna
 
 sudo update-rc.d minidlna defaults
 
-Service commands:
+# Service commands:
 
 sudo service minidlna start
 
