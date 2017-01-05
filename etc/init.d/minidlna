@@ -1,0 +1,48 @@
+#!/bin/sh
+# Mini DLNA
+### BEGIN INIT INFO
+# Provides:          scriptname
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+
+case "$1" in
+'start')
+        /usr/local/sbin/minidlnad -f /etc/minidlna.conf
+	echo Started
+        ;;
+'stop')
+	PID=`/bin/pidof minidlnad`
+	if [ ${PID} ]; then sudo kill -SIGTERM ${PID}
+	else echo Already Stopped
+	fi
+        ;;
+'restart')
+	PID=`/bin/pidof minidlnad`
+	if [ ${PID} ]; then sudo kill -SIGTERM ${PID}
+	fi
+	/usr/local/sbin/minidlnad -f /etc/minidlna.conf
+	echo Restarted
+	;;
+'status')
+	PID=`/bin/pidof minidlnad`
+	if [ ${PID} ]; then echo Running. Process ${PID}
+	else echo Stopped
+	fi
+	;;
+'rescan')
+	PID=`/bin/pidof minidlnad`
+	if [ ${PID} ]; then sudo kill -SIGTERM ${PID}
+	fi
+	/usr/local/sbin/minidlnad -R -f /etc/minidlna.conf
+	echo Rescanning
+	;;
+*)
+        echo "Usage: $0 { start | stop | restart | status | rescan }"
+        ;;
+esac
+exit 0
