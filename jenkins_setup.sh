@@ -13,8 +13,13 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 echo "\n==============================================\n"
 
 # share group rom permissions and set rr file/directory permissions
-sudo groupadd roms
-sudo adduser aclegg2011 roms
-sudo adduser jenkins roms
-sudo chmod -R 777 ./7.1
-sudo chgrp -R roms ./7.1
+#sudo groupadd roms
+#sudo adduser aclegg2011 roms
+#sudo adduser jenkins roms
+#sudo chmod -R 777 ./7.1
+#sudo chgrp -R roms ./7.1
+# modify /etc/default/jenkins change to $JENKINS_USER="aclegg2011"
+chown -R aclegg2011:aclegg2011 /var/lib/jenkins 
+chown -R aclegg2011:aclegg2011 /var/cache/jenkins
+chown -R aclegg2011:aclegg2011 /var/log/jenkins
+# /etc/init.d/jenkins restart
