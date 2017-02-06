@@ -21,3 +21,10 @@ sudo cp etc/init.d/minidlna /etc/init.d
 cd /etc/init.d
 sudo chmod a+x minidlna
 sudo update-rc.d minidlna defaults
+
+# Update GeForce GT 730 drivers
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt-get install nvidia-340
+sudo apt-get install --no-install-recommends ubuntu-desktop
+sudo shutdown -r now
