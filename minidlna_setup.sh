@@ -27,4 +27,4 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
 sudo apt-get install nvidia-340
 sudo apt-get install --no-install-recommends ubuntu-desktop
-sudo shutdown -r now
+sudo shutdown now
