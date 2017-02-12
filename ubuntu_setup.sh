@@ -6,3 +6,6 @@
 # sudo nano /etc/sysctl.conf
 # vm.dirty_background_ratio = 5
 # vm.dirty_ratio = 10
+
+sudo rm -rfv systemd-timesyncd.service
+sudo apt install ntpdate
