@@ -1,0 +1,14 @@
+#etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sdb1 during installation
+UUID=eda9fa87-21d6-48a7-89fe-d67c7fdf4249 /               ext4    errors=remount-ro 0       1
+/dev/sdb5       none            swap    sw              0       0
+# Android Drive 3tb
+UUID=86026d25-b1b8-4227-8522-daa988b52744 /home/aclegg2011/Android ext4 defaults    0    0
+# NAS Drive 4tb
+UUID=5c730924-f4c2-42f9-881a-509f5e0944de /home/aclegg2011/NAS ext4 defaults    0    0
