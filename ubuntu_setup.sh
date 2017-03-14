@@ -9,3 +9,6 @@
 
 sudo rm -rfv systemd-timesyncd.service
 sudo apt install ntpdate
+
+# intel x52 chipset bug fix
+GRUB_CMDLINE_LINUX_DEFAULT="iommu=no-intremap intel_iommu=off"
