@@ -14,4 +14,4 @@ sudo apt install ntpdate
 GRUB_CMDLINE_LINUX_DEFAULT="iommu=no-intremap intel_iommu=off"
 
 # install nvidia driver after new kernel install
- sh ./NVIDIA-Linux-x86_64-375.39.run
+sudo sh ./NVIDIA-Linux-x86_64-375.39.run
